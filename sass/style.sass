@@ -9,11 +9,36 @@
 img
 	display: block
 
+.icon
+	display: block
+	background-image: url(../img/spritesheet.png)
+	background-repeat: no-repeat
+
+.icon-icecream
+	width: 49px
+	height: 49px
+	background-position: -5px -417px
+
+.icon-leaf
+	width: 49px
+	height: 49px
+	background-position: -5px -518px
+
+.icon-cow
+	width: 48px
+	height: 49px
+	background-position: -5px -293px
+
+.icon-thermometer
+	width: 48px
+	height: 49px
+	background-position: -5px -719px
 
 .btn
 	display: inline-block
 	font-weight: bold
-	color: $color-white	
+	color: $color-white
+	text-decoration: none
 	background: #e74b36
 	background: linear-gradient(to top, #e74b36, #f26843)
 	border-bottom: 2px solid rgba(#ac1000, 0.64)
@@ -45,23 +70,40 @@ img
 	border-radius: 22px
 
 .btn-small
-	padding: 0 30px
+	padding: 9px 30px
 	font-size: 15px
-	line-height: 35px	
+	line-height: 17px	
 	border-radius: 18px
 
 body
+	position: relative
 	font-family: 'Roboto', $helvetica
 	font-weight: 400
 	font-size: 16px
 	line-height: 22px
 	color: $color-white
-	&.body-bg-1
-		background-color: $color-bg-1	
+	.body-bg-icecream-wrap,
+	.body-bg-icecream
+		width: 100%
+		height: 100%
+	.body-bg-icecream-wrap
+		content: ''
+		position: absolute
+		z-index: -100
+		top: 0
+		left: 0
+	&.body-bg-1 
+		background-color: $color-bg-1
+		.body-bg-icecream
+			background: url('../img/slider-icecream-1.png') no-repeat center top
 	&.body-bg-2
-		background-color: $color-bg-2	
+		background-color: $color-bg-2
+		.body-bg-icecream
+			background: url('../img/slider-icecream-2.png') no-repeat center top	
 	&.body-bg-3
 		background-color: $color-bg-3
+		.body-bg-icecream
+			background: url('../img/slider-icecream-3.png') no-repeat center top
 
 .container
 	position: relative
@@ -71,18 +113,36 @@ body
 	padding: 0 $container-padding
 	margin: 0 auto
 
+.row
+	box-sizing: border-box
+	margin-left: -$col-padding
+	margin-right: -$col-padding
+
+.col-2,
+.col-4
+	box-sizing: border-box
+	float: left
+	margin: 0
+	padding: 0 $col-padding
+
+.col-2
+	width: 50%
+
+.col-4
+	width: 25%
+
 .header
 	position: relative
 	padding-top: 23px
-	margin-bottom: 600px
+	//margin-bottom: 531px
 	color: $color-white
 	a
 		color: $color-white
 
 .logo
 	position: absolute
-	top: 9px
-	left: -6px
+	top: -14px
+	left: 21px
 	.logo-link
 		display: block
 	.logo-img
@@ -188,49 +248,37 @@ body
 		font-weight: 900
 
 .slider
-	box-sizing: border-box
-	position: absolute
-	z-index: -1
-	top: 0
-	left: 0
-	width: 100%
-	padding-top: 562px
-	padding-left: $container-padding
+	margin-bottom: (40px - 23px)
 	.slide
 		display: none
-		position: absolute
-		z-index: -1
-		top: 0
-		left: 0
-		width: 100%
-		min-height: 881px
 		text-align: center
-	.slide-1
-		background: url('../img/slider-icecream-1.png') no-repeat center top	
-	.slide-2
-		background: url('../img/slider-icecream-2.png') no-repeat center top
-	.slide-3
-		background: url('../img/slider-icecream-3.png') no-repeat center top
+		padding-top: 273px
 	.slide-title
-		position: relative
 		margin: 0
-		padding-top: 392px
 		padding-bottom: 30px
 		width: 100%		
 		font-size: 60px
 		line-height: 60px
-		font-weight: 900
-	.btn
-		position: relative
+		font-weight: 900		
 	.radio
 		display: none
-	.radio:checked + .slide + .label
+	#slider-radio-1:checked ~ .controls .label-1
+		background-color: $color-white
+	#slider-radio-2:checked ~ .controls .label-2
+		background-color: $color-white
+	#slider-radio-3:checked ~ .controls .label-3
 		background-color: $color-white
 	.radio:checked + .slide
 		display: block
-	.label
+	.controls
 		position: relative
 		display: inline-block
+		vertical-align: top
+		left: 0
+		bottom: 46px
+	.label
+		display: block
+		float: left
 		width: 19px
 		height: 19px
 		margin-right: 5px
@@ -239,6 +287,118 @@ body
 		cursor: pointer
 		&:hover
 			background-color: transparentize($color-white2, 0.6)
+
+.banners
+	margin-bottom: 30px
+
+.banner
+	padding: 14px 21px 22px
+	border-radius: 12px
+	&.banner-raspberry
+		background: url('../img/raspberry.jpg') no-repeat center center
+	&.banner-chocolate
+		background: url('../img/chocolate.jpg') no-repeat center center
+	.banner-title
+		margin-top: 0
+		margin-bottom: 15px
+		font-weight: bold
+		font-size: 35px
+		line-height: 40px
+	.banner-text
+		margin-top: 15px
+		margin-bottom: 45px
+		font-weight: bold
+		font-size: 18px
+		line-height: 22px
+	.btn
+		float: right
+
+.hits
+	margin-bottom: 30px
+
+.card
+	margin-left: -10px
+	margin-right: -10px
+	padding: 10px
+	text-align: center
+	border-radius: 6px
+	transition: all 0.3s
+	&:hover
+		background-color: transparentize($color-white2, 0.8)
+		box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3)
+		.card-btn
+			//display: inline-block
+	.card-img-wrap
+		position: relative
+	.card-img
+		width: 100%
+		height: auto
+	.card-icon-banner
+		content: ''
+		position: absolute
+		top: 0
+		left: 0		
+	.icon-hit
+		width: 61px
+		height: 61px
+		background: url('../img/hit.png') no-repeat 0 0
+	.card-price
+		position: absolute
+		left: 0
+		bottom: 1px
+		font-weight: bold		
+		line-height: 45px
+		text-shadow: 1px 1px 3px rgba(#313235, 0.5)
+	.card-price-fz45
+		font-size: 45px
+	.card-price-fz30
+		font-size: 30px
+	.card-price-ruble
+		display: inline-block
+		vertical-align: top
+		width: 36px
+		height: 45px
+		background: url('../img/icon-ruble.png') no-repeat 50% 50%
+	.card-link
+		display: block
+		margin-top: 13px
+		font-weight: 500
+		color: $color-white
+		&:hover,
+		&:active
+			color: $color-orange
+	.card-btn
+		display: none
+		margin-top: 20px
+		margin-bottom: 10px
+
+.about
+	.about-inner
+		padding: 24px 21px
+		color: $color-dark-grey
+		background: url('../img/wafer.jpg')
+		border-radius: 12px
+	.about-title
+		font-size: 24px
+		font-weight: 500
+		line-height: 30px
+	.about-column
+		box-sizing: border-box
+		float: left
+		width: 50%
+	.about-column-left
+		padding-left: 58px
+		padding-right: $col-padding
+	.about-column-right
+		padding-left: ($col-padding + 58px)
+	.about-item-text
+		position: relative
+		margin-top: 20px
+		margin-bottom: 0
+		.icon
+			position: absolute
+			left: -58px
+			top: -14px
 
 
 .clearfix::after
