@@ -3,6 +3,9 @@
   padding: 0;
   list-style-type: none; }
 
+button {
+  border: none; }
+
 img {
   display: block; }
 
@@ -30,6 +33,97 @@ img {
   width: 48px;
   height: 49px;
   background-position: -5px -719px; }
+
+.icon-twitter {
+  width: 33px;
+  height: 32px;
+  background-position: -5px -778px; }
+
+.icon-instagram {
+  width: 32px;
+  height: 32px;
+  background-position: -5px -476px; }
+
+.icon-facebook {
+  width: 32px;
+  height: 32px;
+  background-position: -5px -352px; }
+
+.icon-vk {
+  width: 32px;
+  height: 32px;
+  background-position: -5px -820px; }
+
+.icon-heart {
+  width: 15px;
+  height: 13px;
+  background-position: -5px -394px; }
+
+input[type="text"],
+input[type="email"] {
+  padding: 9px 14px;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #d3d3d2;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: #333;
+  background-color: #fff;
+  outline: none; }
+
+input[type="text"]:hover,
+input[type="email"]:hover {
+  border: 1px solid #c7c6c5;
+  -webkit-box-shadow: inset 0 0 0 1px #c7c6c5;
+  box-shadow: inset 0 0 0 1px #c7c6c5; }
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border: 1px solid #8fbdec;
+  -webkit-box-shadow: inset 0 0 0 1px #8fbdec;
+  box-shadow: inset 0 0 0 1px #8fbdec; }
+
+:-ms-input-placeholder {
+  font-weight: 400;
+  color: #9b9b9b; }
+
+:-moz-placeholder {
+  font-weight: 400;
+  color: #9b9b9b; }
+
+::-webkit-input-placeholder {
+  font-weight: 400;
+  color: #9b9b9b; }
+
+::-moz-placeholder {
+  font-weight: 400;
+  color: #9b9b9b; }
+
+:focus:-ms-input-placeholder {
+  color: transparent; }
+
+:focus:-moz-placeholder {
+  color: transparent; }
+
+:focus::-webkit-input-placeholder {
+  color: transparent; }
+
+:focus::-moz-placeholder {
+  color: transparent; }
+
+.light-link {
+  text-decoration: underline;
+  color: #fff; }
+  .light-link:hover, .light-link:active {
+    color: #ffbc9e; }
+
+.dark-link {
+  text-decoration: underline;
+  color: #333; }
+  .dark-link:hover, .dark-link:active {
+    color: #ec593c; }
 
 .btn {
   display: inline-block;
@@ -67,7 +161,7 @@ img {
 .btn-medium {
   padding: 0 22px;
   font-size: 18px;
-  line-height: 46px;
+  line-height: 44px;
   -webkit-border-radius: 22px;
   border-radius: 22px; }
 
@@ -300,7 +394,7 @@ body {
   margin-bottom: 30px; }
 
 .banner {
-  padding: 14px 21px 22px;
+  padding: 14px 21px 22px 21px;
   -webkit-border-radius: 12px;
   border-radius: 12px; }
   .banner.banner-raspberry {
@@ -381,41 +475,211 @@ body {
     margin-top: 20px;
     margin-bottom: 10px; }
 
-.about .about-inner {
-  padding: 24px 21px;
-  color: #333;
-  background: url("../img/wafer.jpg");
-  -webkit-border-radius: 12px;
-  border-radius: 12px; }
+.about {
+  margin-bottom: 40px; }
+  .about .about-inner {
+    padding: 24px 21px;
+    color: #333;
+    background: url("../img/wafer.jpg");
+    -webkit-border-radius: 12px;
+    border-radius: 12px; }
+  .about .about-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px; }
+  .about .about-column {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 50%; }
+  .about .about-column-left {
+    padding-left: 58px;
+    padding-right: 13px; }
+  .about .about-column-right {
+    padding-left: 71px; }
+  .about .about-item-text {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 0; }
+    .about .about-item-text .icon {
+      position: absolute;
+      left: -58px;
+      top: -14px; }
 
-.about .about-title {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 30px; }
+.news {
+  margin-bottom: 40px; }
 
-.about .about-column {
+.news-blog {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  min-height: 220px;
+  padding: 22px 20px 22px 20px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  background: url("../img/bg-news.jpg") no-repeat center center; }
+  .news-blog .news-blog-descr {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 500;
+    color: #5a5a5a; }
+  .news-blog .news-blog-link {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #333; }
+    .news-blog .news-blog-link:hover, .news-blog .news-blog-link:active {
+      color: #ec593c; }
+
+.news-delivery {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 220px;
+  padding: 6px;
+  background: url("../img/bg-delivery.jpg") repeat center center;
+  -webkit-border-radius: 12px;
+  border-radius: 12px; }
+  .news-delivery .news-delivery-inner {
+    padding: 28px 21px 35px 21px;
+    background-color: #f8f7f4;
+    -webkit-border-radius: 12px;
+    border-radius: 12px; }
+  .news-delivery .news-delivery-descr {
+    margin-top: 0;
+    margin-bottom: 34px;
+    color: #5a5a5a; }
+  .news-delivery .news-delivery-email {
+    width: 60%; }
+  .news-delivery .news-delivery-submit {
+    float: right; }
+
+.map {
+  width: 100%;
+  min-width: 900px;
+  height: 430px;
+  background: url("../img/map.jpg") no-repeat center center; }
+
+.map-container-content {
+  position: relative; }
+
+.map-overlay {
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  top: 65px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 302px;
+  padding: 28px 25px 30px 25px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  background-color: #fff;
+  -webkit-border-radius: 12px;
+  border-radius: 12px; }
+  .map-overlay span {
+    display: inline-block;
+    vertical-align: baseline;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px; }
+  .map-overlay .map-addres {
+    margin-bottom: 18px; }
+  .map-overlay .map-phone {
+    margin-top: 3px; }
+  .map-overlay .btn {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 23px; }
+
+.footer {
+  padding-top: 35px;
+  padding-bottom: 25px; }
+
+.social-btns {
+  float: left; }
+  .social-btns li {
+    float: left;
+    margin-right: 11px; }
+  .social-btns a {
+    display: block;
+    border: 4px solid #c2cec7;
+    -webkit-border-radius: 100%;
+    border-radius: 100%; }
+    .social-btns a:hover {
+      border-color: #dbe3de;
+      -webkit-box-shadow: 0 0 0 1px #dbe3de;
+      box-shadow: 0 0 0 1px #dbe3de; }
+    .social-btns a:active {
+      border-color: #d9e1dd;
+      -webkit-box-shadow: 0 0 0 1px #d9e1dd;
+      box-shadow: 0 0 0 1px #d9e1dd; }
+      .social-btns a:active .icon {
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        -webkit-box-shadow: inset 0 2px 2px 0 #9b9b9b;
+        box-shadow: inset 0 2px 2px 0 #9b9b9b; }
+
+.copyright-block {
+  float: right;
+  margin-top: -15px; }
+  .copyright-block .html-academy-logo-link {
+    display: block; }
+  .copyright-block span {
+    font-size: 12px;
+    line-height: 14px; }
+
+.footer-links-block a {
+  display: block;
+  font-size: 13px;
+  line-height: 22px; }
+
+.footer-links-block-left {
+  float: right;
+  padding-right: 27px; }
+  .footer-links-block-left .link-producer {
+    position: relative;
+    font-weight: bold; }
+    .footer-links-block-left .link-producer .icon {
+      position: absolute;
+      top: 3px;
+      left: -22px; }
+
+.footer-links-block-right {
   float: left;
-  width: 50%; }
-
-.about .about-column-left {
-  padding-left: 58px;
-  padding-right: 13px; }
-
-.about .about-column-right {
-  padding-left: 71px; }
-
-.about .about-item-text {
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 0; }
-  .about .about-item-text .icon {
-    position: absolute;
-    left: -58px;
-    top: -14px; }
+  margin-left: -21px; }
 
 .clearfix::after {
   content: '';
   display: table;
   clear: both; }
+
+/*==========  Desktop First Method  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  /**/ }
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1100px) {
+  /**/
+  .news-delivery .news-delivery-email {
+    width: 55%; } }
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1000px) {
+  /**/
+  .news-delivery .news-delivery-email {
+    width: 50%; } }
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 900px) {
+  /**/ }
+
+/*==========  Mobile First Method  ==========*/
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  /**/ }
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  /**/ }

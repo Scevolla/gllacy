@@ -6,6 +6,9 @@
 	padding: 0
 	list-style-type: none
 
+button
+	border: none
+
 img
 	display: block
 
@@ -33,6 +36,96 @@ img
 	width: 48px
 	height: 49px
 	background-position: -5px -719px
+
+.icon-twitter
+	width: 33px
+	height: 32px
+	background-position: -5px -778px
+
+.icon-instagram
+	width: 32px
+	height: 32px
+	background-position: -5px -476px
+
+.icon-facebook
+	width: 32px
+	height: 32px
+	background-position: -5px -352px
+
+.icon-vk
+	width: 32px
+	height: 32px
+	background-position: -5px -820px
+
+.icon-heart
+	width: 15px
+	height: 13px
+	background-position: -5px -394px
+
+input[type="text"],
+input[type="email"]
+	padding: 9px 14px
+	font-family: 'Roboto', $helvetica
+	font-weight: 700
+	font-size: 16px
+	line-height: 24px
+	border: 1px solid #d3d3d2
+	border-radius: 4px
+	color: $color-dark-grey
+	background-color: $color-white
+	outline: none
+
+input[type="text"]:hover,
+input[type="email"]:hover
+	border: 1px solid #c7c6c5
+	box-shadow: inset 0 0 0 1px #c7c6c5
+
+input[type="text"]:focus,
+input[type="email"]:focus
+	border: 1px solid #8fbdec
+	box-shadow: inset 0 0 0 1px #8fbdec
+
+:-ms-input-placeholder
+	font-weight: 400
+	color: #9b9b9b
+
+:-moz-placeholder
+	font-weight: 400
+	color: #9b9b9b
+
+::-webkit-input-placeholder
+	font-weight: 400
+	color: #9b9b9b
+
+::-moz-placeholder
+	font-weight: 400
+	color: #9b9b9b
+
+:focus:-ms-input-placeholder
+	color: transparent
+
+:focus:-moz-placeholder
+	color: transparent
+
+:focus::-webkit-input-placeholder
+	color: transparent
+
+:focus::-moz-placeholder
+	color: transparent
+
+.light-link
+	text-decoration: underline
+	color: $color-white
+	&:hover,
+	&:active
+		color: #ffbc9e
+
+.dark-link
+	text-decoration: underline
+	color: $color-dark-grey
+	&:hover,
+	&:active
+		color: #ec593c
 
 .btn
 	display: inline-block
@@ -66,7 +159,7 @@ img
 .btn-medium
 	padding: 0 22px
 	font-size: 18px
-	line-height: 46px
+	line-height: 44px
 	border-radius: 22px
 
 .btn-small
@@ -292,7 +385,7 @@ body
 	margin-bottom: 30px
 
 .banner
-	padding: 14px 21px 22px
+	padding: 14px 21px 22px 21px
 	border-radius: 12px
 	&.banner-raspberry
 		background: url('../img/raspberry.jpg') no-repeat center center
@@ -373,6 +466,7 @@ body
 		margin-bottom: 10px
 
 .about
+	margin-bottom: 40px
 	.about-inner
 		padding: 24px 21px
 		color: $color-dark-grey
@@ -400,8 +494,143 @@ body
 			left: -58px
 			top: -14px
 
+.news
+	margin-bottom: 40px
+
+.news-blog
+	box-sizing: border-box
+	min-height: 220px
+	padding: 22px 20px 22px 20px
+	border-radius: 12px
+	background: url('../img/bg-news.jpg') no-repeat center center
+	.news-blog-descr
+		display: block
+		margin-bottom: 3px
+		font-weight: 500
+		color: $color-medium-grey
+	.news-blog-link
+		font-weight: bold
+		font-size: 24px
+		line-height: 29px
+		color: $color-dark-grey
+		&:hover,
+		&:active
+			color: #ec593c
+
+.news-delivery
+	box-sizing: border-box
+	min-height: 220px
+	padding: 6px
+	background: url('../img/bg-delivery.jpg') repeat center center
+	border-radius: 12px
+	.news-delivery-inner
+		padding: 28px 21px 35px 21px
+		background-color: $color-white2
+		border-radius: 12px
+	.news-delivery-descr
+		margin-top: 0
+		margin-bottom: 34px
+		color: $color-medium-grey
+	.news-delivery-email
+		width: 60%
+	.news-delivery-submit
+		float: right
+
+.map
+	width: 100%
+	min-width: 900px
+	height: 430px
+	background: url('../img/map.jpg') no-repeat center center
+
+.map-container-content
+	position: relative
+
+.map-overlay
+	position: absolute
+	z-index: 100
+	right: 0
+	top: 65px
+	box-sizing: border-box
+	width: 302px
+	padding: 28px 25px 30px 25px
+	font-size: 14px
+	line-height: 20px
+	color: $color-dark-grey
+	background-color: $color-white
+	border-radius: 12px
+	span
+		display: inline-block
+		vertical-align: baseline
+		font-weight: bold
+		font-size: 18px
+		line-height: 24px
+	.map-addres
+		margin-bottom: 18px
+	.map-phone
+		margin-top: 3px
+	.btn
+		box-sizing: border-box
+		width: 100%
+		margin-top: 23px
+
+.footer
+	padding-top: 35px
+	padding-bottom: 25px
+
+.social-btns
+	float: left
+	li
+		float: left
+		margin-right: 11px
+	a
+		display: block
+		border: 4px solid #c2cec7
+		border-radius: 100%
+		&:hover
+			border-color: #dbe3de
+			box-shadow: 0 0 0 1px #dbe3de
+		&:active
+			border-color: #d9e1dd
+			box-shadow: 0 0 0 1px #d9e1dd
+			.icon
+				border-radius: 100%
+				box-shadow: inset 0 2px 2px 0 #9b9b9b
+
+.copyright-block
+	float: right
+	margin-top: -15px
+	.html-academy-logo-link
+		display: block
+	span
+		font-size: 12px
+		line-height: 14px
+
+.footer-links-block
+	a
+		display: block
+		font-size: 13px
+		line-height: 22px
+
+.footer-links-block-left
+	float: right
+	padding-right: 27px
+	.link-producer
+		position: relative
+		font-weight: bold
+		.icon
+			position: absolute
+			top: 3px
+			left: -22px
+
+.footer-links-block-right
+	float: left
+	margin-left: -21px
+
 
 .clearfix::after
 	content: ''
 	display: table
 	clear: both
+
+
+@import 'media'
