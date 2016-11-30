@@ -9,6 +9,9 @@
 button
 	border: none
 
+textarea
+	resize: none
+
 img
 	display: block
 
@@ -63,7 +66,9 @@ img
 	background-position: -5px -394px
 
 input[type="text"],
-input[type="email"]
+input[type="email"],
+input[type="password"],
+textarea
 	padding: 9px 14px
 	font-family: 'Roboto', $helvetica
 	font-weight: 700
@@ -76,12 +81,16 @@ input[type="email"]
 	outline: none
 
 input[type="text"]:hover,
-input[type="email"]:hover
+input[type="email"]:hover,
+input[type="password"]:hover,
+textarea:hover
 	border: 1px solid #c7c6c5
 	box-shadow: inset 0 0 0 1px #c7c6c5
 
 input[type="text"]:focus,
-input[type="email"]:focus
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus
 	border: 1px solid #8fbdec
 	box-shadow: inset 0 0 0 1px #8fbdec
 
@@ -115,17 +124,17 @@ input[type="email"]:focus
 
 .light-link
 	text-decoration: underline
-	color: $color-white
+	color: $color-white !important
 	&:hover,
 	&:active
-		color: #ffbc9e
+		color: #ffbc9e !important
 
 .dark-link
 	text-decoration: underline
-	color: $color-dark-grey
+	color: $color-dark-grey !important
 	&:hover,
 	&:active
-		color: #ec593c
+		color: #ec593c !important
 
 .btn
 	display: inline-block
@@ -168,6 +177,32 @@ input[type="email"]:focus
 	line-height: 17px	
 	border-radius: 18px
 
+.container
+	position: relative
+	box-sizing: border-box
+	max-width: 1200px
+	min-width: 900px
+	padding: 0 $container-padding
+	margin: 0 auto
+
+.row
+	box-sizing: border-box
+	margin-left: -$col-padding
+	margin-right: -$col-padding
+
+.col-2,
+.col-4
+	box-sizing: border-box
+	float: left
+	margin: 0
+	padding: 0 $col-padding
+
+.col-2
+	width: 50%
+
+.col-4
+	width: 25%
+
 body
 	position: relative
 	font-family: 'Roboto', $helvetica
@@ -198,32 +233,6 @@ body
 		.body-bg-icecream
 			background: url('../img/slider-icecream-3.png') no-repeat center top
 
-.container
-	position: relative
-	box-sizing: border-box
-	max-width: 1200px
-	min-width: 900px
-	padding: 0 $container-padding
-	margin: 0 auto
-
-.row
-	box-sizing: border-box
-	margin-left: -$col-padding
-	margin-right: -$col-padding
-
-.col-2,
-.col-4
-	box-sizing: border-box
-	float: left
-	margin: 0
-	padding: 0 $col-padding
-
-.col-2
-	width: 50%
-
-.col-4
-	width: 25%
-
 .header
 	position: relative
 	padding-top: 23px
@@ -244,50 +253,123 @@ body
 
 .header-list
 	font-size: 0
-	li		
+	&>li
+		position: relative		
 		display: inline-block
 		vertical-align: top
 		line-height: 32px
-	a
-		display: block
-		border-radius: 14px
+		&:before
+			content: none
+			position: absolute
+			left: 0
+			top: 31px
+			display: block
+			height: 9px
+			width: 100%
+		&:hover
+			&:before
+				content: ''
+		&>a
+			display: block
+			border-radius: 14px
 
-.navigation
+.header-slidedown
+	height: 0
+	overflow: hidden
+	transition: height 0.4s
+	position: absolute
+	top: 37px
+	z-index: 10
+	background-color: $color-white2
+	box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3)
+	border-radius: 4px
+
+.navigation-list
 	@extend .header-list
 	float: left
 	margin-left: 164px
-	li		
+	.navigation-item		
 		font-size: 16px
-	a
+		&:hover
+			.navigation-link
+				text-decoration: none
+				color: $color-dark-grey
+				background-color: $color-white2
+			.navigation-submenu
+				height: 162px
+	.navigation-link
 		padding: 0 14px
 		font-weight: 700
-		&:hover,
 		&:active
 			text-decoration: none
 			color: $color-dark-grey
 			background-color: $color-white2
-		&:active
 			box-shadow: inset 0 2px 1px 0 #696969
 		&.active
 			text-decoration: none
 			color: $color-white
 			background-color: $color-red
 
+.navigation-submenu
+	left: -7px
+	.submenu-title,
+	a
+		display: block		
+		font-size: 14px		
+		color: $color-dark-grey
+	.submenu-title
+		margin: 0 6px
+		padding: 11px 15px
+		font-weight: 700
+		line-height: 16px
+		border-bottom: 1px solid #d1d0ce
+	a
+		margin: 2px 0
+		padding: 0 21px
+		line-height: 28px
+		text-decoration: none
+		white-space: nowrap
+		color: $color-dark-grey
+		&:hover
+			background-color: #fbded7
+		&:active
+			background-color: #f6b5a5
+		&.active
+			background-color: #d07058
+
 .user-block
 	@extend .header-list
 	float: right
-	li
+	.user-block-item
 		font-size: 14px
 		margin-left: 10px
-	a
+		&:hover
+			.user-block-link
+				color: $color-dark-grey
+				background-color: $color-white2
+			.link-search::before
+				background-position: -5px -691px
+			.link-login::before
+				background-position: -5px -606px
+			.link-cart::before
+				background-position: -5px -263px
+			.link-cart-filled::before
+				background-position: -5px -233px
+			.search-block
+				height: 74px
+				z-index: 101
+			.login-block
+				height: 185px
+				z-index: 101
+			.cart-block
+				height: 240px
+				z-index: 101
+	.user-block-link
 		position: relative
 		padding-right: 16px
 		text-decoration: none
 		font-weight: 500
 		background-color: transparentize($color-white, 0.8)		
-		&:hover
-			color: $color-dark-grey
-			background-color: $color-white2
 		&::before
 			content: ''
 			position: absolute
@@ -304,8 +386,6 @@ body
 			width: 17px
 			height: 17px
 			background-position: -5px -664px
-		&:hover::before
-			background-position: -5px -691px
 	.link-login
 		padding-left: 44px
 		&::before
@@ -313,8 +393,6 @@ body
 			width: 21px
 			height: 19px
 			background-position: -5px -577px
-		&:hover::before
-			background-position: -5px -606px
 	.link-cart
 		min-width: 56px
 		padding-left: 44px
@@ -323,8 +401,105 @@ body
 			width: 21px
 			height: 20px
 			background-position: -5px -173px
-		&:hover::before
-			background-position: -5px -263px
+	.link-cart-filled
+		&::before
+			background-position: -5px -203px
+
+.search-block
+	right: 0
+	input
+		box-sizing: border-box
+		width: 240px
+		margin: 15px
+
+.login-block
+	right: 0
+	.login-block-form
+		padding: 20px 15px 15px
+	input
+		box-sizing: border-box
+		display: block
+		width: 240px
+		margin-bottom: 10px
+	.btn
+		float: left
+		margin-top: 5px
+	a
+		display: block
+		padding-left: 120px
+		font-size: 13px
+		line-height: 23px
+		
+.cart-block
+	right: 0
+	.cart-block-content
+		min-width: 510px
+		padding: 26px 15px 20px
+		font-size: 13px
+		line-height: 16px
+		color: $color-medium-grey
+	.cart-block-item
+		box-sizing: border-box
+		position: relative
+		min-height: 33px
+		padding-top: 10px
+		padding-left: 73px
+		margin-bottom: 18px
+	.cart-item-remove
+		position: absolute
+		left: 2px
+		top: 12px
+		width: 11px
+		height: 11px
+		cursor: pointer
+		&::before,
+		&::after
+			content: ''
+			position: absolute
+			left: -2px
+			top: 5px
+			width: 15px
+			height: 1px
+			background-color: #333
+		&::before
+			transform: rotate(45deg)
+		&::after
+			transform: rotate(-45deg)
+		&:hover::before,
+		&:hover::after
+			background-color: $color-orange
+	.cart-item-icon
+		position: absolute
+		top: 0
+		left: 26px
+		width: 33px
+		height: 33px
+	.cart-item-name
+		display: inline-block
+		vertical-align: top
+		width: 220px
+		margin-right: 11px
+	.cart-item-weight
+		display: inline-block
+		vertical-align: top
+		min-width: 110px
+		margin-right: 11px
+		text-align: right
+	.cart-item-price
+		display: inline-block
+		vertical-align: top
+		min-width: 60px
+		text-align: right
+	.cart-block-total-price
+		display: block
+		padding-right: 10px
+		padding-top: 6px
+		margin-bottom: 15px
+		text-align: right
+		font-weight: 700
+		font-size: 15px
+	.btn
+		float: right
 
 .phone-block
 	float: right
@@ -410,17 +585,17 @@ body
 	margin-bottom: 30px
 
 .card
+	display: block
 	margin-left: -10px
 	margin-right: -10px
 	padding: 10px
 	text-align: center
 	border-radius: 6px
 	transition: all 0.3s
+	cursor: pointer
 	&:hover
 		background-color: transparentize($color-white2, 0.8)
 		box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3)
-		.card-btn
-			//display: inline-block
 	.card-img-wrap
 		position: relative
 	.card-img
@@ -452,6 +627,11 @@ body
 		width: 36px
 		height: 45px
 		background: url('../img/icon-ruble.png') no-repeat 50% 50%
+	.card-descr
+		display: block
+		margin-top: 13px
+		font-weight: 500
+		color: $color-white
 	.card-link
 		display: block
 		margin-top: 13px
@@ -626,6 +806,70 @@ body
 	float: left
 	margin-left: -21px
 
+
+.screen-overlay
+	display: none
+	position: fixed
+	z-index: 1000
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0, 0.6)
+
+.feedback-form
+	position: fixed
+	top: 50%
+	left: 50%
+	width: 430px
+	padding: 17px 25px 25px 25px
+	transform: translate(-50%, -50%)
+	background-color: $color-white2
+	border-radius: 8px
+	.close-button
+		display: block
+		position: absolute
+		right: 16px
+		top: 16px
+		width: 18px
+		height: 18px
+		cursor: pointer
+	.close-button::before,
+	.close-button::after
+		content: ''
+		position: absolute
+		left: -2px
+		top: 8px
+		width: 22px
+		height: 2px
+		background-color: #070707
+	.close-button::before
+		transform: rotate(45deg)
+	.close-button::after	
+		transform: rotate(-45deg)
+	.close-button:hover::before,
+	.close-button:hover::after
+		background-color: $color-orange
+	.feedback-form-title
+		margin: 0
+		font-weight: 500
+		font-size: 24px
+		line-height: 24px
+		color: $color-dark-grey
+	input
+		box-sizing: border-box
+		display: block
+		width: 267px
+		margin-top: 20px
+	textarea
+		display: block
+		box-sizing: border-box
+		width: 100%
+		height: 155px
+		margin-top: 20px
+	.btn
+		float: right
+		margin-top: 25px
 
 .clearfix::after
 	content: ''

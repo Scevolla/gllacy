@@ -21,18 +21,71 @@
 					<img src="img/logo.png" alt="Gllacy logo" class="logo-img">
 				</a>
 			</div>
+
 			<nav class="navigation">
 				<ul class="navigation-list ul-reset">
-					<li><a href="#">Каталог</a></li>
-					<li><a href="#">Доставка и оплата</a></li>
-					<li><a href="#">О компании</a></li>
+					<li class="navigation-item">
+						<a class="navigation-link" href="#">Каталог</a>
+						<ul class="navigation-submenu header-slidedown ul-reset">
+							<li><span class="submenu-title">Новинки</span></li>
+							<li><a href="#">Сливочное</a></li>
+							<li><a href="#">Щербеты</a></li>
+							<li><a href="#">Фруктовый лед</a></li>
+							<li><a href="#">Мелорин</a></li>
+						</ul>
+					</li>
+					<li class="navigation-item"><a class="navigation-link" href="#">Доставка и оплата</a></li>
+					<li class="navigation-item"><a class="navigation-link" href="#">О компании</a></li>
 				</ul>
 			</nav>
+
 			<ul class="user-block ul-reset">
-				<li><a href="#" class="link-search"></a></li>
-				<li><a href="#" class="link-login">Вход</a></li>
-				<li><a href="#" class="link-cart">Пусто</a></li>
+				<li class="user-block-item">
+					<a href="#" class="user-block-link link-search"></a>
+					<div class="search-block header-slidedown">
+						<input type="text" name="search" placeholder="Что ищем?">
+					</div>
+				</li>
+				<li class="user-block-item">
+					<a href="#" class="user-block-link link-login">Вход</a>
+					<div class="login-block header-slidedown">
+						<form class="login-block-form" action="#">
+							<input type="email" name="email" placeholder="Электронная почта" required>
+							<input type="password" name="password" placeholder="Пароль" required>
+							<button type="submit" class="btn btn-small">Войти</button>
+							<a class="dark-link" href="#">Забыли пароль?</a>
+							<a class="dark-link" href="#">Новая регистрация</a>
+						</form>
+					</div>
+				</li>
+				<li class="user-block-item">
+					<a href="#" class="user-block-link link-cart link-cart-filled">2 товара</a>
+					<div class="cart-block header-slidedown">
+						<div class="cart-block-content clearfix">
+							<ul class="cart-block-list ul-reset">
+								<li class="cart-block-item">
+									<div class="cart-item-remove"></div>
+									<img class="cart-item-icon" src="img/icecream-1.png" alt="" width="33" height="33">
+									<span class="cart-item-name">Пломбир с апельсиновым джемом</span>
+									<span class="cart-item-weight">1,5 кг x 200 руб.</span>
+									<span class="cart-item-price">300 руб.</span>
+								</li>
+								<li class="cart-block-item">
+									<div class="cart-item-remove"></div>
+									<img class="cart-item-icon" src="img/icecream-3.png" alt="" width="33" height="33">
+									<span class="cart-item-name">Клубничный пломбир с присыпкой из белого шоколада</span>
+									<span class="cart-item-weight">1,5 кг x 200 руб.</span>
+									<span class="cart-item-price">300 руб.</span>
+								</li>
+							</ul>
+							<hr>
+							<span class="cart-block-total-price">Итого: 750 руб.</span>
+							<a href="#" class="btn btn-small">Оформить заказ</a>
+						</div>
+					</div>
+				</li>
 			</ul>
+
 			<div class="phone-block">
 				<span class="schedule">С 10 до 20, ежедневно</span>
 				<span class="phone">8 812 450-25-25</span>
@@ -45,19 +98,19 @@
 			<input type="radio" class="radio" name="slider-radio" id="slider-radio-1" checked>
 			<div class="slide slide-1">
 				<h2 class="slide-title">Крем-брюле и пломбир<br>с малиновым джемом</h2>
-				<div class="btn btn-large">Давайте оба!</div>
+				<div class="btn btn-large btn-feedback-form">Давайте оба!</div>
 			</div>			
 
 			<input type="radio" class="radio" name="slider-radio" id="slider-radio-2">
 			<div class="slide slide-2">
-				<h2 class="slide-title">Крем-брюле и пломбир<br>с малиновым джемом2</h2>
-				<div class="btn btn-large">Давайте оба!</div>
+				<h2 class="slide-title">Шоколадный пломбир<br>и лимонный сорбет</h2>
+				<div class="btn btn-large btn-feedback-form">Давайте оба!</div>
 			</div>			
 
 			<input type="radio" class="radio" name="slider-radio" id="slider-radio-3">
 			<div class="slide slide-3">
-				<h2 class="slide-title">Крем-брюле и пломбир<br>с малиновым джемом3</h2>
-				<div class="btn btn-large">Давайте оба!</div>
+				<h2 class="slide-title">Пломбир с помадкой<br>и клубничный щербет</h2>
+				<div class="btn btn-large btn-feedback-form">Давайте оба!</div>
 			</div>
 
 			<div class="controls clearfix">
@@ -75,7 +128,7 @@
 					<div class="banner banner-raspberry clearfix">
 						<h2 class="banner-title">Малинка даром!</h2>
 						<p class="banner-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-						<a href="#" class="btn btn-medium">Хочу варенье!</a>
+						<a href="#" class="btn btn-medium btn-feedback-form">Хочу варенье!</a>
 					</div>
 				</div>
 
@@ -83,7 +136,7 @@
 					<div class="banner banner-chocolate clearfix">
 						<h2 class="banner-title">Шоколадки даром!</h2>
 						<p class="banner-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-						<a href="#" class="btn btn-medium">Хочу шоколадки!</a>
+						<a href="#" class="btn btn-medium btn-feedback-form">Хочу шоколадки!</a>
 					</div>
 				</div>
 			</div>
@@ -102,7 +155,6 @@
 							<div class="card-price"><span class="card-price-fz45">310</span><span class="card-price-ruble"></span><span class="card-price-fz30">/кг</span></div>
 						</div>
 						<a href="#" class="card-link">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
-						<a href="" class="btn btn-small card-btn">Быстрый просмотр</a>
 					</div>
 				</div>
 
@@ -114,7 +166,6 @@
 							<div class="card-price"><span class="card-price-fz45">380</span><span class="card-price-ruble"></span><span class="card-price-fz30">/кг</span></div>
 						</div>
 						<a href="#" class="card-link">Сливочно-кофейное с кусочками шоколада</a>
-						<a href="" class="btn btn-small card-btn">Быстрый просмотр</a>
 					</div>
 				</div>
 
@@ -126,7 +177,6 @@
 							<div class="card-price"><span class="card-price-fz45">355</span><span class="card-price-ruble"></span><span class="card-price-fz30">/кг</span></div>
 						</div>
 						<a href="#" class="card-link">Сливочно-клубничное с присыпкой из белого шоколада</a>
-						<a href="" class="btn btn-small card-btn">Быстрый просмотр</a>
 					</div>
 				</div>
 
@@ -138,7 +188,6 @@
 							<div class="card-price"><span class="card-price-fz45">415</span><span class="card-price-ruble"></span><span class="card-price-fz30">/кг</span></div>
 						</div>
 						<a href="#" class="card-link">Сливочное крем-брюле с карамельной подливкой</a>
-						<a href="" class="btn btn-small card-btn">Быстрый просмотр</a>
 					</div>
 				</div>
 
@@ -177,7 +226,7 @@
 						<div class="news-delivery-inner">
 							<p class="news-delivery-descr">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
 							<form action="">
-							<input type="email" name="email" class="news-delivery-email" placeholder="Электронная почта">
+							<input type="email" name="email" class="news-delivery-email" placeholder="Электронная почта" required>
 								<button type="submit" class="btn btn-medium news-delivery-submit">Отправить</button>
 							</form>
 						</div>
@@ -198,7 +247,7 @@
 					Для заказов по телефону:<br><span class="map-phone">
 					8 812 450-25-25</span><br>
 					(с 10 до 20 ежедневно)
-					<a href="#" class="btn btn-medium">Форма обратной связи</a>
+					<a href="#" class="btn btn-medium btn-feedback-form">Форма обратной связи</a>
 				</div>
 			</div>		
 		</div>
@@ -232,6 +281,18 @@
 			</div>
 		</div>		
 	</footer>
+
+	<div class="screen-overlay">
+		<form class="feedback-form clearfix" action="#">
+			<span class="close-button"></span>
+			<h3 class="feedback-form-title">Мы обязательно вам ответим!</h3>
+			<input type="text" name="name" placeholder="Как вас зовут?" required>
+			<input type="email" name="email" placeholder="Ваша почта для ответа?" required>
+			<textarea name="message"cols="30" rows="6" placeholder="Напишите что-нибудь..."></textarea>
+			<button type="submit" class="btn btn-medium">Отправить</button>
+		</form>
+	</div>
+
 
 	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 	<script src="js/map.js"></script>
