@@ -65,6 +65,21 @@ img
 	height: 13px
 	background-position: -5px -394px
 
+.icon-checkbox-checked
+	width: 20px
+	height: 20px
+	background-position: -5px -83px
+
+.icon-arrow-prev
+	width: 9px
+	height: 14px
+	background-position: -5px -5px
+
+.icon-arrow-next
+	width: 9px
+	height: 14px
+	background-position: -5px -29px
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -236,7 +251,6 @@ body
 .header
 	position: relative
 	padding-top: 23px
-	//margin-bottom: 531px
 	color: $color-white
 	a
 		color: $color-white
@@ -514,6 +528,22 @@ body
 	.phone
 		font-size: 22px
 		font-weight: 900
+
+.bread-crumbs
+	float: left
+	margin-top: 43px
+	font-size: 0
+	line-height: 0
+	li
+		display: inline-block
+		font-size: 14px
+		line-height: 16px
+	a,
+	span
+		margin: 0 8px
+	li:first-child>a
+		margin-left: 0
+
 
 .slider
 	margin-bottom: (40px - 23px)
@@ -870,6 +900,208 @@ body
 	.btn
 		float: right
 		margin-top: 25px
+
+.catalog-title
+	margin-top: 3px
+	margin-bottom: 28px
+	font-weight: bold
+	font-size: 35px
+	line-height: 40px
+
+.catalog-form
+	display: block
+	margin-bottom: 30px
+	.input-group-wrapper
+		display: inline-block
+		vertical-align: top
+		margin-right: 11px
+		margin-bottom: 16px
+	.input-group-wrapper-fat
+		margin-right: 0
+	.input-group-wrapper-fillers
+		margin-bottom: 0
+	.input-group-wrapper-title
+		display: block
+		padding-left: 15px
+		padding-bottom: 5px
+		font-weight: 500
+		font-size: 14px
+		line-height: 16px
+	select,
+	option,
+	label,
+	button
+		font-family: "Roboto", $helvetica
+		font-weight: 500
+		font-size: 16px
+		line-height: 20px
+	select,
+	.radio-group,
+	.checkbox-group,
+	.price-group
+		display: block
+		box-sizing: border-box
+		height: 36px
+		padding: 8px 15px 8px 15px			
+		border-radius: 16px
+		background: transparentize($color-white2, 0.8)
+		color: $color-white		
+	select		
+		width: 193px						
+		border: none
+		//-webkit-appearance: none
+		outline: none
+		&:hover,
+		&:focus
+			color: $color-dark-grey
+			background-color: $color-white
+	.range
+		position: relative
+		width: 188px
+		height: 12px
+		padding-top: 8px
+		cursor: pointer
+	.range-ruler
+		width: 100%
+		height: 4px
+		background-color: transparentize($color-white2, 0.5)
+	.range-thumb
+		position: absolute
+		top: 0
+		width: 20px
+		height: 20px
+		background-color: $color-white2
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1)
+		border-radius: 100%
+		cursor: pointer
+	.range-thumb-min
+		left: 20px
+	.range-thumb-max
+		right: 50px
+	.range-filler
+		position: absolute
+		height: 4px
+		left: 20px
+		right: 50px
+		background-color: $color-white2
+	input[type='radio']
+		display: none
+	input[type='radio']:checked + .custom-radio::before
+		content: ''
+	input[type='checkbox']
+		display: none
+	input[type='checkbox']:checked + .custom-checkbox
+		background: url(../img/checkbox.png) no-repeat center center
+	label
+		position: relative
+		display: inline-block
+		vertical-align: top
+		padding-left: 30px
+		margin-right: 20px
+		cursor: pointer
+		&:last-child
+			margin-right: 0
+		&:hover .custom-radio,
+		&:hover .custom-checkbox
+			box-shadow: 0 0 0 1px $color-white
+	.custom-radio
+		box-sizing: border-box
+		display: block
+		position: absolute
+		left: 0
+		top: 0
+		width: 20px
+		height: 20px
+		border: 2px solid $color-white
+		border-radius: 100%
+		&::before
+			position: absolute
+			top: 3px
+			left: 3px
+			width: 10px
+			height: 10px
+			background-color: $color-white
+			border-radius: 100%
+	.custom-checkbox
+		box-sizing: border-box
+		display: block
+		position: absolute
+		left: 0
+		top: 0
+		width: 20px
+		height: 20px
+		border: 2px solid $color-white
+		border-radius: 3px
+	button
+		box-sizing: border-box
+		display: inline-block
+		vertical-align: bottom
+		height: 36px
+		padding: 6px 30px 8px 30px
+		border: 2px solid $color-white2			
+		border-radius: 16px
+		background: transparentize($color-white2, 0.8)
+		color: $color-white
+		cursor: pointer
+		outline: none
+		&:hover
+			color: $color-dark-grey
+			background-color: #fafbfb
+		&:active
+			color: $color-dark-grey
+			background-color: #eaeaea
+			box-shadow: inset 0 2px 1px 0 #696969
+
+.catalog-products
+	.row
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
+
+.catalog-pagination
+	padding-bottom: 40px
+	padding-top: 12px
+	ul
+		float: right
+	li
+		float: left
+		margin-left: 2px
+	a,
+	span
+		position: relative
+		display: block
+		width: 26px
+		height: 26px
+		font-weight: 500
+		font-size: 16px
+		line-height: 26px
+		text-decoration: none
+		text-align: center
+		color: $color-white
+		border-radius: 100%
+	a:hover
+		background-color: rgba(255, 255, 255, 0.2)
+	a:active
+	a.active
+		background-color: $color-white
+		color: $color-dark-grey
+	.blocked
+		cursor: default
+		opacity: 0.3
+	.prev-btn
+		margin-right: 5px
+	.next-btn
+		margin-left: 5px
+	.icon
+		+absolute-align()
+
+
+
+.catalog-footer
+	padding-top: 20px
+	border-top: 1px solid rgba(255, 255, 255, 0.3)
+	.copyright-block
+		margin-top: 0
 
 .clearfix::after
 	content: ''
